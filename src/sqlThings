@@ -1,0 +1,23 @@
+DROP TABLE child_section;
+DROP TABLE children;
+DROP TABLE departments;
+DROP TABLE employees;
+DROP TABLE details;
+DROP TABLE sections;
+
+CREATE TABLE employees (
+	employer_id serial PRIMARY KEY,
+	name varchar(15),
+	surname varchar(15),
+	department varchar(15),
+	salary int
+)
+
+INSERT INTO employees (name, surname, department, salary)
+VALUES
+  ('Zaur', 'Tregulov', 'IT', 500),
+  ('Oleg', 'Ivanov', 'Sales', 700),
+  ('Nina', 'Sidorova', 'HR', 850);
+
+SELECT * FROM employees;
+
