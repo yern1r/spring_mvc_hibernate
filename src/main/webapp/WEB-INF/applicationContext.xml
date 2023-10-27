@@ -24,12 +24,17 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+
         <property name="driverClass" value="org.postgresql.Driver" />
-        <property name="jdbcUrl" value="jdbc:postgresql://localhost:5432/my_db" />
-        <property name="user" value="posgres" />
+        <property name="jdbcUrl" value="jdbc:postgresql://localhost:5432/spring_db" />
+        <property name="user" value="postgres" />
         <property name="password" value="1" />
+
     </bean>
+
+
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
