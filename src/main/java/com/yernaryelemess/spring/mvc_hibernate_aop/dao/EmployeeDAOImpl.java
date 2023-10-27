@@ -1,7 +1,6 @@
 package com.yernaryelemess.spring.mvc_hibernate_aop.dao;
 
 import com.yernaryelemess.spring.mvc_hibernate_aop.entity.Employee;
-import org.springframework.transaction.annotation.Transactional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +33,13 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 
         return allEmployees;
+    }
+
+    @Override
+    public void saveEmployee(Employee employee) {
+
+        Session session = sessionFactory.getCurrentSession();
+
+        session.save(employee);
     }
 }
